@@ -1,0 +1,59 @@
+<div style="float:right;position:relative;">
+<div title="Great performance" class="shoppingcart">
+</div>
+</div>
+<h4><?php echo MAGPIE_NAME;?></h4>
+<p>Product Import Export plugin for WordPress e-Commerce (a plugin made by Instinct.co.nz) quickly gets your products and images into your WPEC (&quot;WordPress e-Commerce&quot;) store. </p>
+
+	
+<p>It transfers your data (imports into WPEC) from a comma-separated values (&quot;csv&quot;) file made from a spreadsheet or a database, as well as transfers your data out (exports from WPEC) to a csv file for very easy product updating. </p>
+<p>Having your products in a csv file provides an easy, sensible backup of your product data. And, of course, you are sensible, because you are using MagPie PRO. Thank you!  :-) <br />
+</p>
+
+<h4>Data Importing</h4>
+<p>A csv file is a specially formatted file containing your product data. </p>
+<p>Almost any spreadsheet or database program can create it for you. </p>
+<p>The format of a csv file contains a &quot;header&quot; line of the field names -- also called &quot;column names&quot; -- of your data lines -- also called &quot;rows&quot; -- in the same order as your data contained in the following rows. </p>
+<p>Note: A row does not have to be constrained to a single text line. A row can contain carriage returns and HTML formatting, but if so, such a field must have a legal, correctly-formatted field delimiter, and separated from the other fields by a legal, correctly-formatted field separator. In the case of your comma-delimited file -- and most csv files -- the delimiter is a standard double-quote mark, and the field separator is -- as implied -- a comma. </p>
+<p>With MagPie PRO, you don't have to have the field names in a special order. That is handled by &quot;field mapping,&quot; which will be explained in the &quot;Import CSV&quot; page. </p>
+<p>And while it is not necessary to give the fields special names, they must be something that is readily identifiable by you. (Not &quot;field1,&quot; field2,&quot; etc.) </p>
+<p>A simple example csv file can be seen under the menu &quot;Settings/Help.&quot; </p>
+<p>The two fields that are mandatory are name and price. </p>
+<p>If you plan on updating any products, a SKU or post ID number must be present. This is a unique number &quot;keyed&quot; to a specific product so that MagPie PRO will know which product to update, should that need arise. </p>
+<p>The SKU is a typical product property that you assign to a specific product keep track and account for your product inventory. </p>
+<p>The ID number is the WordPress post ID number, which will be automatically generated for each product when you import (and then export) to csv. You won't know the post ID number of any products the first time you import, of course, but from then on (after your first export), MagPie PRO will refer to that number if you need to do any updating. </p>
+<p>Using either field keying method is valid. Some people just don't have (or need) a SKU, so using the ID is fine. <br />
+</p>
+<h4>Image Importing </h4>
+<ol class="withalpha"><li><p>Introduction to Image Import </p>
+<p>You will be specifying the image to be associated with a product by providing the name of the image in your csv file. </p>
+<p>You will be uploading your images ahead of time into your <?php echo gg_create_csv_file_location(true,false);?> folder before the actual MagPie PRO csv import so that MagPie PRO knows ahead of time to look for them there and then assign them to your product. </p>
+<p>Use large-sized images, which will be adjusted and correctly resized by WordPress upon import by MagPie PRO to suit the presentation size needed (i.e., thumbnail, featured image, etc.). </p>
+<p>Alternatively, you can specify a full url to the image, and MagPie PRO will pull the image over the Internet without further intervention on your part. </p>
+<p>That choice is specified at the time you initiate the import procedure.</p>
+</li>
+<li><p>Preparing for Directory-Based Image Retrievals </p>
+<p>Your MagPie PRO image directory location is here: </p>
+<p><?php echo gg_create_csv_file_location(true,false);?> </p>
+<p>- Upload your files manually via ftp to the directory shown above </p>
+<p>- Make sure a field called &quot;image&quot; is present in your csv file </p>
+<p>- In that field (and in the correct product row), enter the filename of your image, with its proper extention (i.e., handbag1.jpg) </p>
+<p>- If no image is entered, or it it is misspelled, your product will not have have an associated image. (There's nothing wrong with that, but products sell much better when a customer can see what the product looks like!) </p></li>
+<li><p>Preparing for Web-Based Image Retrievals </p>
+<p>Web-based image import requires the fully-qualified url to your product image, which can be located on any standard web server. </p>
+<p>- Make sure a field called &quot;image_external&quot; is present in your csv file </p>
+<p>- In that field (and in the correct product row), enter the full url of your image to be pulled, with its proper extention (i.e., http://www.mysite.com/my_images/handbag1.jpg) </p>
+<p>- As with directory-based image retrievals, if no image is entered, or it is misspelled, your product will not have have an associated image. </p>
+<p>- If you have entered a name in the &quot;image&quot; and you have uploaded an image, AND you have entered an image url in the &quot;image_external&quot; field and an image actually exists there, the directory-based method will take precedence and be used. </p>
+<p>(As of this version, no error checking or &quot;rollover&quot; condition is performed, so if the directory-based &quot;image&quot; import is not successful, the web-based &quot;image_external&quot; import method will be skipped.) </p>
+</li>
+</ol>
+<p>- Note: Web-based image retrivals are more resource-intensive, so they take more time. Directory-based is always preferred where possible. <br />
+</p>
+<h4>Data Exporting </h4>
+<p>Once you have your initial product data imported and functional within WPEC, you might want to retrieve (&quot;export&quot;) the data in the same form of a csv file. </p>
+<p>The MagPie PRO advantage to this will be that the exported data will be in a more MagPie-friendly format, enabling you to make quick changes within the csv file (or a spreadsheet or database), and re-import with MagPie PRO back into WPEC, automatically updating all of your products with any changes you may have made within the new csv file. </p>
+<p>There's more information about this feature in the &quot;Export CSV&quot; section. <br />
+</p>
+<h4>Next Steps </h4>
+<p>Now go the the &quot;Import CSV&quot; section (using the top menu) for more information about the import procedure. </p>
